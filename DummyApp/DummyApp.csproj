@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NetEssentials4Linux.AppMonitor\NetEssentials4Linux.AppMonitor.csproj" />
+    <ProjectReference Include="..\NetEssentials4Linux.Core\NetEssentials4Linux.Core.csproj" />
+  </ItemGroup>
+
 </Project>
