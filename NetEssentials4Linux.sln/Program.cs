@@ -16,7 +16,7 @@ namespace NetEssentials4Linux.sln
 
 
                 Console.WriteLine("We're on Linux!");
-                var File = ReadResourceFile("JocheOjeda.AppAsService.Templates.UbuntuServiceTemplate.txt").Replace("$WorkingDirectory", WorkingDirectory); ;
+                var File = "";//ReadResourceFile("JocheOjeda.AppAsService.Templates.UbuntuServiceTemplate.txt").Replace("$WorkingDirectory", WorkingDirectory); ;
                 Console.WriteLine(File);
                 Console.WriteLine(WorkingDirectory);
             }

@@ -1,8 +1,9 @@
 ﻿using CommandLine;
+using NetEssentials4Linux.Core;
 
 namespace NetEssentials4Linux.AppMonitor
 {
-    public class InstallOptions
+    public class InstallOptions:OptionsBase
     {
 
 
