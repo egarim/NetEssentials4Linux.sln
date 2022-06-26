@@ -1,9 +1,9 @@
 ﻿[Unit]
-Description=Running ASP.NET Core on Ubuntu 18.04 Webserver APACHE
+Description=Dot Net App $ExecStart installed with NetEssentials for Linux
 
 [Service]
 WorkingDirectory=$WorkingDirectory
-ExecStart=/usr/bin/dotnet /var/www/publishapplication/publish/Webnix.dll
+ExecStart=$ExecStart
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=$RestartTime

@@ -6,10 +6,18 @@ namespace NetEssentials4Linux.AppMonitor
     {
         protected override void RunOptions(OptionsBase opts)
         {
-            var CurrentOptions = opts as InstallOptions;
+            var CurrentOptions = (InstallOptions)opts;
 
+            if (!CurrentOptions.SelfContained)
+            {
+                CurrentOptions.Executable = $"{CurrentOptions.NetRuntime} {CurrentOptions.Executable}";
+            }
 
-            var File = NetEssentials4Linux.Core.Extensions.ReadResourceFile("NetEssentials4Linux.AppMonitor.Templates.UbuntuServiceTemplate.txt").Replace("$WorkingDirectory", CurrentOptions.WorkDirectory); ;
+            var File = NetEssentials4Linux.Core.Extensions.ReadResourceFile("NetEssentials4Linux.AppMonitor.Templates.UbuntuServiceTemplate.txt")
+            .Replace("$WorkingDirectory", CurrentOptions.WorkDirectory)
+            .Replace("$ExectStart", CurrentOptions.Executable)
+            .Replace("$RestartTime", CurrentOptions.RestartTime.ToString())
+            .Replace("$SyslogIdentifier", CurrentOptions.SyslogIdentifier);
             Console.WriteLine(File);
             //Console.WriteLine(WorkingDirectory);
 
