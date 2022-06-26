@@ -6,11 +6,12 @@ namespace NetEssentials4Linux.AppMonitor
     {
         protected override void RunOptions(OptionsBase opts)
         {
+            var CurrentOptions = opts as InstallOptions;
 
-               
-                var File = NetEssentials4Linux.Core.Exentesions.ReadResourceFile("JocheOjeda.AppAsService.Templates.UbuntuServiceTemplate.txt").Replace("$WorkingDirectory", WorkingDirectory); ;
-                Console.WriteLine(File);
-                Console.WriteLine(WorkingDirectory);
+
+            var File = NetEssentials4Linux.Core.Extensions.ReadResourceFile("NetEssentials4Linux.AppMonitor.Templates.UbuntuServiceTemplate.txt").Replace("$WorkingDirectory", CurrentOptions.WorkDirectory); ;
+            Console.WriteLine(File);
+            //Console.WriteLine(WorkingDirectory);
 
 
             // var CurrentInstallOptions=opts as InstallOptions;
@@ -27,7 +28,7 @@ namespace NetEssentials4Linux.AppMonitor
             // CommandLine.Parser.Default.ParseArguments<InstallOptions>(args)
             //                .WithParsed(RunOptions)
             //                .WithNotParsed(HandleParseError);
-           
+
         }
     }
 }
