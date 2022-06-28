@@ -1,6 +1,7 @@
 using DummyApp.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using NetEssentials4Linux.AppMonitor;
 
 namespace DummyApp
 {
@@ -9,6 +10,9 @@ namespace DummyApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            AppInstaller appInstaller = new AppInstaller();
+            appInstaller.Execute(args);
+
 
             // Add services to the container.
             builder.Services.AddRazorPages();

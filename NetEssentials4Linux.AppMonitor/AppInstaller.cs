@@ -1,3 +1,4 @@
+using CommandLine;
 using NetEssentials4Linux.Core;
 
 namespace NetEssentials4Linux.AppMonitor
@@ -37,6 +38,11 @@ namespace NetEssentials4Linux.AppMonitor
             //                .WithParsed(RunOptions)
             //                .WithNotParsed(HandleParseError);
 
+        }
+
+        protected override void HandleParseError(IEnumerable<Error> errs)
+        {
+            //base.HandleParseError(errs);
         }
     }
 }
